@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+
+    <style>
+      h1 {
+          font-family: Raleway, sans serif;
+          font-weight: 700;
+          font-size: 42px;
+          color: orange;
+          margin-top: -5px;
+          text-align: center;
+      }
+
+      h4 {
+          font-family: Raleway, sans serif;
+          font-weight: 700;
+          font-size: 24px;
+          color: orange;
+      }
+
+      p {
+          font-family: Raleway, sans serif;
+          font-weight: 600;
+          font-size: 18px;
+          color: orange;
+
+      }
+
+      input {
+          width: 300px;
+          background-color: #ffefde;
+          padding:5px;
+          border: 2px solid orange;
+          font-family: Raleway, sans serif;
+          font-weight: 600;
+          font-size: 18px;
+          color: orange;
+
+
+      }
+
+      button {
+          width: 100%;
+          background-color: orange;
+          padding:5px;
+          border: 2px solid #ffdebb;
+          font-family: Raleway, sans serif;
+          font-weight: 700;
+          font-size: 24px;
+          color: white;
+      }
+
+      .contactform {
+          width: 450px;
+          height: 300px;
+          margin: 0 auto;
+          background-color: #ffdebb;
+          padding: 10px;
+      }
+
+      .button {
+          text-align: center;
+      }
+
+      #error {
+          display: none;
+          width: 450px;
+          height: 100px;
+          margin: 0 auto;
+          text-align: center;
+      }
+
+    </style>
+</head>
+<body>
+      <script>
+
+      $(document).ready(function(){
+        $("form").submit(function(event) {
+          event.preventDefault();
+          var username = document.getElementById("username").value;
+          var password = document.getElementById("password").value;
+          if (username === "username" && password === "password") {
+              document.location.href = "jsprobs4_success.html";
+          } else {
+              $("#error").fadeIn(1000);
+              }
+          });
+      });
+    
+    </script>
+
+    <div class="contactform">
+        <h1> Enter your username and password </h1>
+        <form>
+           <div id="user">
+                <p>USERNAME: &nbsp;&nbsp; <input type="text" id="username" /></p>
+           </div>
+           <div id="pass">
+                <p>PASSWORD: &nbsp;&nbsp; <input type="password" id="password" /></p>
+            </div>
+            <div id="button">
+                 <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div id="error">      
+      <h4>Your shit is wrong, please try again!</h4>
+      <img src="_pics/smiley.gif">
+    </div>
+
+
+</body>
+</html>

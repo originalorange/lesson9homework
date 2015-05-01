@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Orbitron:700' rel='stylesheet' type='text/css'>
+
+  <style>
+    #txt {
+        width: 500px;
+        background-color: orange;
+        font-family: Orbitron, sans serif;
+        color:#FFF;
+        font-size: 72px;
+        text-align: center;
+        margin: 0 auto;
+        padding:70px 70px 70px 70px;
+        border: 2px solid gray;
+    }
+  </style>
+
+  <script>
+    function startTime() {
+      var today=new Date();
+      var h=today.getHours();
+      var m=today.getMinutes();
+      var s=today.getSeconds();
+      var ms=today.getMilliseconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      ms = checkTime(ms);
+      document.getElementById('txt').innerHTML = h+":"+m+":"+s+":"+ms;
+      var t = setTimeout(function(){startTime()},500);
+    }
+
+    function checkTime(i) {
+      if (i<10) {i = "0" + i};
+      return i;
+    }
+
+  </script>
+</head>
+
+<body onload="startTime()">
+
+  <div id="txt"></div>
+
+</body>
+</html>
